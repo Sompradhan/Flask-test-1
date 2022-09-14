@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Product</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main-home.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/admin_dashboard.css">   
+  <link rel="icon" type="image/png" href="/image/logo1.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+  <style type="text/css">
+   .catagory1-page,.catagory2-page,.catagory3-page{
+    display: none;
+  }
+</style>
+
+</head>
+<body class="body">
+  <div class="mobile-view">
+    <div class="row">
+      <div class="col-md-6 col-6 logo1">
+        <img src="/image/logo3.jpg">
+      </div>
+      <div class="col-md-6 col-6">
+        <div class="mobile-menu">
+          <div id="mySidepanel" class="sidepanel">
+            <div class="m_menu">
+              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="far fa-times-circle"></i></a>  
+              <div class="top-nav-wrapper">
+                <div class="top-nav">                       
+                  <div class="co_profile">
+                    <div class="profile-img">
+
+                    </div>
+                    <div class="user-details">
+                      <span id="more-details">Product<i class="fa fa-caret-down"></i></span>
+                    </div>
+                  </div>
+                  <div class="main-menu-content">
+                    <ul>   
+                      <li class="more-details">
+                       <i class="" aria-hidden="true"></i><a href="">change password</a>
+                     </li><br>
+                     
+                     <li class="more-details">
+                      <i class="fa fa-lock" aria-hidden="true"></i><a href="product_login.html">Logout</a>
+                    </li>
+                  </ul>
+
+                </div>
+                <div class="nav-slider"></div>
+                <div class="hosting dash">
+                  <div class="hosting-btn nav-btn">Products</div>
+                </div>
+                <div class="hosting dash">
+                  <div class="hosting1-btn nav-btn">Locations</div>
+                </div>
+                
+                <div class="category dash">
+                  <div class="category1-btn nav-btn">Product Movements</div>
+                </div>
+               <div class="nav-slider"></div>
+              </div>
+            </div> 
+          </div>
+        </div>
+        <button class="openbtn" onclick="openNav()"><i class="far fa-bars"></i></button> 
+      </div>
+    </div>
+  </div> 
+</div>
+<div class="row">
+  <div class="col-xl-2 col-lg-3 col-md-6">
+    <div class="two">
+      <div class="top-nav-wrapper">
+        <div class="top-nav">
+          <div class="logo">
+            <img src="/image/logo3.jpg">
+          </div>
+          <div class="co_profile">
+            <div class="profile-img">
+
+            </div>
+            <div class="user-details">
+              <span id="more-details">Products<i class="fa fa-caret-down"></i></span>
+            </div>
+          </div>
+          <div class="main-menu-content">
+            <ul>                                  
+              <li class="more-details">
+               <i class="" aria-hidden="true"></i><a href="">change password</a>
+             </li><br>  
+
+
+
+             <li class="more-details">
+              <i class="fa fa-lock" aria-hidden="true"></i><a href="product_login.html">Logout</a>
+            </li>
+          </ul>
+        </div>
+        <div class="nav-slider"></div>
+                       
+                          <div class="hosting dash">
+                            <div class="hosting-btn nav-btn">Products </div>
+                          </div>
+                          <div class="hosting dash">
+                            <div class="hosting1-btn nav-btn">Locations</div>
+                          </div>
+                          
+                          <div class="category dash">
+                            <div class="category1-btn nav-btn">Product Movement</div>
+                          </div>
+                          
+                          <div class="nav-slider"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xl-10 col-lg-9 col-md-12">
+                    
+                    
+                  <!-- Location list --> 
+                  <div class="page mt-4 hosting1-page title1">
+                    <div class="mt-5">
+                     <div class="list1">
+                       <h4 class="mb-4">Location</h4>
+                       <button class="btn1"><a href="addlocation.html" style="color:white">ADD</a></button>
+                     </div>
+                     <div class="detail">
+                      <table class="table table-bordered table-striped">
+                        <thead>
+                          <tr class="catagory_">
+                            <th>Location id</th>
+                            <th>Name</th>
+                            <th>Update</th>
+                            <th>Delete</th>
+                          </tr>
+                        </thead>
+
+                        <tbody>
+                         <tr>
+                          <td>1</td>
+                          <td>Valsad</td>
+                          <td><button class="btn0 btn2"><a href="updatelocation.html" >Update</a></button></td>
+                          <td><button class="btn3 btn0"><a>Delete</a></button></td>
+                        </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div> 
+
+              <!-- Product list --> 
+              <div class="page mt-4 hosting-page title1">
+                <div class="mt-5">
+                 <div class="list1">
+                   <h4 class="mb-4">Product List</h4>
+                   <button class="btn1"><a href="/addproducts" style="color:white">ADD</a></button>
+                 </div>
+                 <div class="detail">
+                  <table class="table table-bordered table-striped">
+                    <thead>
+                      <tr>
+                        <th>Image</th>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Description</th>
+                        <th>Update</th>
+                        <th>Delete</th>
+                      </tr>
+                    </thead>
+
+                    <tbody>
+                      {% for allpro in allproduct %}
+                      <tr>
+                        <td><img src="" height="100px" width="100px"></td>
+                        <td>{{loop.index}}</td>
+                        <td>{{allpro.pname}}</td>
+                        <td>{{allpro.price}}</td>
+                        <td>{{allpro.description}}</td>
+                        <td><button class="btn0 btn2" value="{{loop.index}}" ><a href="{{url_for("updateproduct", pid=loop.index)}}" >Update</a></button></td>
+                        <td><button class="btn3 btn0"><a>Delete</a></button></td>
+                      </tr>
+                      {% endfor %}
+                      
+                    </tbody>
+
+
+                  </table>
+                </div>
+              </div>
+            </div> 
+
+          
+          <!-- Product Movement list -->
+          <div class="page mt-4 catagory1-page title1">
+            <div class="mt-5">
+              <div class="list1">
+                <h4 class="mb-4">Product Movement</h4>
+                <button class="btn1"><a href="addproductmovement.html"style="color:white">ADD</a></button>
+              </div>
+              <div class="detail">
+                <table class="table table-bordered table-striped">
+                  <thead>
+                    <tr class="cake_">
+                      <th>Movement id</th>
+                      <th>Product id</th>
+                      <th>Quantity</th>
+                      <th>From Location</th>
+                      <th>To Location</th>
+                      <th>Timestamp</th>
+                      <th>Update</th>
+                      <th>Delete</th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    
+                    <tr>
+                      <td>123</td>
+                      <td>11</td>
+                      <td>4</td>    
+                      <td>Vadodara</td>
+                      <td>Vapi</td>
+                      <td>timestamp</td>
+                      <td><button class="btn0 btn2"><a href="updateproductmovement.html" >Update</a></button></td>
+                      <td><button class="btn3 btn0"><a>Delete</a></button></td>
+                    </tr>
+                    
+                  </tbody>
+
+                </table>
+              </div>
+            </div>
+          </div>
+
+                
+        </div>
+     </div> 
+
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+
+
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+     <script type="text/javascript">
+    
+       
+    
+      function openNav() {
+        document.getElementById("mySidepanel").style.width = "100%";
+      }
+      function closeNav() {
+        document.getElementById("mySidepanel").style.width = "0";
+      }
+
+      function openForm() {
+        document.getElementById("myForm").style.display = "block";
+      }
+      $(function() {
+       setTimeout(function() { $("#hideDiv").fadeOut(1500); }, 3000)
+
+     });
+
+     $(document).ready(function(){
+
+      $(".user-details").click(function(){
+        $(".main-menu-content").slideToggle("slow");
+      })
+
+      $(".btn1").click(function(){
+        $(".page1").show();
+        $(".hosting-page").hide();
+      })
+
+      $("button.btn1.btn2").click(function(){
+       $(".page2").show();
+       $(".page1").hide();
+       $(".dryfruit-page").hide();
+     })
+    });
+
+     var tl = new TimelineMax();
+
+//Logos
+TweenMax.set('.wp-logo', { scale: 1 })
+TweenMax.set('.weebly-logo', { scale: 1 })  
+
+// Pages 
+TweenMax.set('.hosting-page', { display: 'block' })
+TweenMax.set('.hosting1-page', { display: 'none' })
+TweenMax.set('.category1-page', { display: 'none' })
+
+
+TweenMax.to('.mobile-nav', 0, { x: -300 })
+
+
+  $('.hosting-btn').on('click', function() {
+  $(this).addClass('active').removeClass('nav-btn');
+  $('.hosting1-btn').removeClass('active').addClass('nav-btn');
+  $('.category1-btn').removeClass('active').addClass('nav-btn');
+  
+  $('.hosting-page').css({ display: 'block' })
+  $('.hosting1-page').css({ display: 'none' })
+  
+  $('.catagory1-page').hide();
+  
+});
+
+
+
+$('.hosting1-btn').on('click', function(){  
+  $(this).addClass('active').removeClass('nav-btn');
+  $('.hosting-btn').removeClass('active').addClass('nav-btn');
+  $('.category1-btn').removeClass('active').addClass('nav-btn');
+
+
+  $('.hosting-page').css({ display: 'none' })
+  $('.hosting1-page').css({ display: 'block' })
+  $('.catagory1-page').hide();
+  
+});
+
+$('.category1-btn').on('click', function() {
+ $(this).addClass('active').removeClass('nav-btn');
+ $('.hosting-btn').removeClass('active').addClass('nav-btn');
+ $('.hosting1-btn').removeClass('active').addClass('nav-btn');
+ 
+ $('.hosting-page').css({ display: 'none' })
+ $('.hosting1-page').css({ display: 'none' })
+ $('.catagory1-page').show();
+});
+
+
+
+</script>
+<script>
+
+</script>
+</body>
+</html>
