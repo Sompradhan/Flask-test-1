@@ -32,8 +32,15 @@ def product_home():
     return render_template('product_home.html', allproduct=allproduct, allocation=allocation)
 
 
-@app.route('/location')
+@app.route('/addlocation', methods=['GET', 'POST'])
 def locations():
+    if request.method == 'POST':
+        city1 = request.form['city']
+        loc = location(city=city1)
+        db.session.add(loc)
+        db.session.commit()
+        allocation = location.query.all()
+        return redirect(url_for('product_home'))
     return render_template('addlocation.html')
 
 @app.route('/addproducts', methods=['GET', 'POST'])
@@ -85,6 +92,36 @@ def deleteproduct(pid):
     del_pro = product.query.filter_by(proId=pid).first()
     db.session.delete(del_pro)
     db.session.commit()
+    return redirect(url_for('product_home'))
+
+@app.route('/deletelocation/<int:lid>', methods=['GET', 'POST'])
+def deletelocation(lid):
+    del_loc = location.query.filter_by(l_id=lid).first()
+    db.session.delete(del_loc)
+    db.session.commit()
+    return redirect(url_for('product_home'))
+
+@app.route('/updatelocation/<int:lid>', methods=['GET', 'POST'])
+def updatelocation(lid):
+    loc = location.query.filter_by(l_id=lid).first()
+    return render_template('updatelocation.html', loc=loc)
+
+@app.route('/updatelocation1/', methods=['GET', 'POST'])
+def updatelocation1():
+    if request.method == 'POST':
+        lid = (int)(request.form['lid'])
+        city = request.form['city']
+        loc = location.query.filter_by(l_id=lid).first()
+
+        # prod = product.query.get(proId)
+        loc.city = city
+
+        db.session.commit()
+
+        # pro = product(pname=name, price=price, description=description)
+        # db.session.add(pro)
+        # db.session.commit()
+        # allproduct = product.query.all()
     return redirect(url_for('product_home'))
 
 if __name__ == "__main__":

@@ -129,7 +129,7 @@
                     <div class="mt-5">
                      <div class="list1">
                        <h4 class="mb-4">Location</h4>
-                       <button class="btn1"><a href="addlocation.html" style="color:white">ADD</a></button>
+                       <button class="btn1"><a href="/addlocation" style="color:white">ADD</a></button>
                      </div>
                      <div class="detail">
                       <table class="table table-bordered table-striped">
@@ -147,8 +147,8 @@
                          <tr>
                           <td>{{alloc.l_id}}</td>
                           <td>{{alloc.city}}</td>
-                          <td><button class="btn0 btn2"><a href="updatelocation.html" >Update</a></button></td>
-                          <td><button class="btn3 btn0"><a>Delete</a></button></td>
+                          <td><button class="btn0 btn2" value="{{alloc.l_id}}"><a href="{{url_for("updatelocation", lid=alloc.l_id)}}" >Update</a></button></td>
+                          <td><button class="btn3 btn0" value="{{alloc.l_id}}"><a href="{{url_for("deletelocation", lid=alloc.l_id)}}">Delete</a></button></td>
                         </tr>
                         {% endfor %}
                         </tbody>
@@ -203,7 +203,7 @@
             <div class="mt-5">
               <div class="list1">
                 <h4 class="mb-4">Product Movement</h4>
-                <button class="btn1"><a href="addproductmovement.html"style="color:white">ADD</a></button>
+                <button class="btn1"><a href="/addproductmovement"style="color:white">ADD</a></button>
               </div>
               <div class="detail">
                 <table class="table table-bordered table-striped">
