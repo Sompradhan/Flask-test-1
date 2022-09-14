@@ -28,7 +28,8 @@ class product(db.Model):
 @app.route('/')
 def product_home():
     allproduct = product.query.all()
-    return render_template('product_home.html', allproduct=allproduct)
+    allocation = location.query.all()
+    return render_template('product_home.html', allproduct=allproduct, allocation=allocation)
 
 
 @app.route('/location')
@@ -56,9 +57,9 @@ def updateproduct(pid):
 
 @app.route('/updateproduct1/', methods=['GET', 'POST'])
 def updateproduct1():
-    print("asas")
     if request.method == 'POST':
-        proId = request.form['pid']
+        proId = (int)(request.form['pid'])
+        print(proId)
         name = request.form['name']
         price = request.form['price']
         description = request.form['description']
@@ -68,14 +69,23 @@ def updateproduct1():
         # prod = product.query.get(proId)
         print(prod)
         prod.pname = name
+        prod.price = price
+        prod.description = description
+
         db.session.commit()
 
         # pro = product(pname=name, price=price, description=description)
         # db.session.add(pro)
         # db.session.commit()
         # allproduct = product.query.all()
-        return redirect(url_for('product_home'))
-    return render_template('addproduct.html')
+    return redirect(url_for('product_home'))
+
+@app.route('/deleteproduct/<int:pid>', methods=['GET', 'POST'])
+def deleteproduct(pid):
+    del_pro = product.query.filter_by(proId=pid).first()
+    db.session.delete(del_pro)
+    db.session.commit()
+    return redirect(url_for('product_home'))
 
 if __name__ == "__main__":
     app.run(debug=True, port=8000)

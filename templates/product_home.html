@@ -143,12 +143,14 @@
                         </thead>
 
                         <tbody>
+                        {% for alloc in allocation %}
                          <tr>
-                          <td>1</td>
-                          <td>Valsad</td>
+                          <td>{{alloc.l_id}}</td>
+                          <td>{{alloc.city}}</td>
                           <td><button class="btn0 btn2"><a href="updatelocation.html" >Update</a></button></td>
                           <td><button class="btn3 btn0"><a>Delete</a></button></td>
                         </tr>
+                        {% endfor %}
                         </tbody>
                       </table>
                     </div>
@@ -166,7 +168,6 @@
                   <table class="table table-bordered table-striped">
                     <thead>
                       <tr>
-                        <th>Image</th>
                         <th>Id</th>
                         <th>Name</th>
                         <th>Price</th>
@@ -179,13 +180,12 @@
                     <tbody>
                       {% for allpro in allproduct %}
                       <tr>
-                        <td><img src="" height="100px" width="100px"></td>
-                        <td>{{loop.index}}</td>
+                        <td>{{allpro.proId}}</td>
                         <td>{{allpro.pname}}</td>
                         <td>{{allpro.price}}</td>
                         <td>{{allpro.description}}</td>
-                        <td><button class="btn0 btn2" value="{{loop.index}}" ><a href="{{url_for("updateproduct", pid=loop.index)}}" >Update</a></button></td>
-                        <td><button class="btn3 btn0"><a>Delete</a></button></td>
+                        <td><button class="btn0 btn2" value="{{allpro.proId}}" ><a href="{{url_for("updateproduct", pid=allpro.proId)}}" >Update</a></button></td>
+                        <td><button class="btn3 btn0" value="{{allpro.proId}}" ><a href="{{url_for("deleteproduct", pid=allpro.proId)}}">Delete</a></button></td>
                       </tr>
                       {% endfor %}
                       
